@@ -1,9 +1,10 @@
-import express from 'express';
-import http from 'http';
-import * as createUsers from './modules/createUsers';
-import * as createBlogs from './modules/createBlogs';
-import * as removeItems from './modules/removeItems';
-import queryBlogs from "./modules/queryBlogs";
+const express = require('express');
+const http = require('http');
+const createUsers = require('./modules/createUsers');
+const createBlogs = require('./modules/createBlogs');
+const removeItems = require('./modules/removeItems');
+const queryBlogs = require('./modules/queryBlogs');
+require('dotenv').config();
 
 const app = express();
 app.use(express.urlencoded({ extended: false }))
@@ -88,3 +89,4 @@ app.get('/blog/:year?/:month?/:day?', (req, res) => {
 
 const blog = http.createServer(app);
 blog.listen(process.env.PORT);
+console.log('App listening on port ' + process.env.PORT);
