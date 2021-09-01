@@ -1,4 +1,4 @@
-# Amit (Aflalo) Lax's Simple Blog Express Server
+# Simple Blog Express Server
 
 ## Project setup
 
